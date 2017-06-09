@@ -8,7 +8,7 @@ class menu extends MX_Controller{
 	public function index(){
 		$data['categories'] = $this->menu_category->testing();
 		$data['text_category'] = 'Categories';
-		$data['text_all'] = 'All text';
+		$data['text_all'] = 'Show All';
 		$this->load->view("menu", $data);
 	} 
 }

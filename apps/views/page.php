@@ -4,4 +4,4 @@
 <div class="container">
 	<?php $this->load->view($main_content); ?>
 </div>
-<?php $this->load->view('includes/footer'); ?>
+<?php echo modules::run("footer"); ?>

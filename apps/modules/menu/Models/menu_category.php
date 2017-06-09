@@ -1,12 +1,17 @@
 <?php
 class Category{
+	public $id;
 	public $href;
 	public $name;
 	public $children;
-	public $column = 0;
+	public $column = 1;
 }
 
 class menu_category extends CI_Model{
+	function __construct(){
+		parent::__construct();
+		$this->load->model('service/ProductCategoryService');
+	}
 	public function testing(){
 		
 		//parent category
@@ -43,7 +48,56 @@ class menu_category extends CI_Model{
 		
 		//add all category to array
 		$category = array($category1, $category2);
-		return $category; // return array
+		$categoryDbList = $this->ProductCategoryService->getAllProductCategory();
+		$subCategoryDbList = $this->ProductCategoryService->getAllSubCategory();
+		
+		$categoryArray = array();
+		if(isset($categoryDbList) && !empty($categoryDbList)){
+			foreach ($categoryDbList as $categoryDb){
+				if(strcmp($categoryDb->display_ind , 'Y') == 0 && strcmp($categoryDb->is_parent, 'Y') == 0){
+					$category = $this->convertCategoryDbToCategory($categoryDb);
+					if(isset($category)){
+						$categoryArray[$category->id] = $category;
+					}
+				}
+			}
+		}
+		
+		if(isset($subCategoryDbList) && !empty($subCategoryDbList)){
+			foreach ($subCategoryDbList as $subCategoryDb){
+				if(strcmp($subCategoryDb->display_ind , 'Y') == 0){
+					$subCategory = $this->convertSubCategoryDbToSubCategory($subCategoryDb);
+					if(isset($subCategory) && array_key_exists($subCategoryDb->category_id,$categoryArray)){
+						array_push($categoryArray[$subCategoryDb->category_id]->children , $subCategory);
+// 						$categoryArray[$subCategoryDb->category_id]->column++;
+					}
+				}
+			}
+		}
+		return $categoryArray; // return array
+	}
+	
+	private function convertCategoryDbToCategory($categoryDb){
+		if(isset($categoryDb)){
+			$category = new Category();
+			$category->name = $categoryDb->category_name;
+			$category->id = $categoryDb->category_id;
+			$category->href = $categoryDb->category_name;
+			$category->children = array();
+			return $category;
+		}
+		return null;
+	}
+	
+	private function convertSubCategoryDbToSubCategory($subCategoryDb){
+		if(isset($subCategoryDb)){
+			$subCategory = new Category();
+			$subCategory->name = $subCategoryDb->name;
+			$subCategory->id = $subCategoryDb->sub_category_id;
+			$subCategory->href = $subCategoryDb->name;
+			return $subCategory;
+		}
+		return null;
 	}
 }
 
