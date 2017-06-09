@@ -35,3 +35,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /.settings/org.eclipse.wst.common.project.facet.core.xml
 /.settings/org.eclipse.wst.jsdt.ui.superType.container
 /.settings/org.eclipse.wst.jsdt.ui.superType.name
+/apps/logs/*.php
+/apps/logs/*.php
