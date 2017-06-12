@@ -1,22 +1,45 @@
 <div>
 	<header class="page-header">
 		
-		<section id="top_nav" class="container max-width">
-			<div class="pull-left col-md-offset-5 col-sm-offset-5 col-xs-offset-3 col-lg-offset-0">
+		<div id="top_nav" class="container max-width">
+			<div class="pull-left offset-md-5 offset-sm-5 offset-xs-5 offset-lg-0">
 				<ul class="list-inline">
-					<li><a href="#"><i class="fa fa-envelope"></i><span class="">  hello@ziumlight.com</span></a></li>
+					<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i><span class="">  hello@ziumlight.com</span></a></li>
 				</ul>
 			</div>
 			
-			<div class="pull-right hidden-xs hidden-sm col-lg-4 hidden-md">
+			<div class="pull-right hidden-md-down">
 				<ul class="list-inline">
 					<li class="list-inline-item"><a href="#"><i class="fa fa-usd"></i><span class="hidden-xs hidden-sm hidden-md">  Honest Prices</span></a></li>
 					<li class="list-inline-item"><a href="#"><i class="fa fa-truck"></i><span class="hidden-xs hidden-sm hidden-md">  Free Delivery &amp; Assembly</span></a></li>
 					<li class="list-inline-item"><a href="#"><i class="fa fa-retweet"></i><span class="hidden-xs hidden-sm hidden-md">  One To One Exchange</span></a></li>
 				</ul>
 			</div>
-		</section>
+		</div>
+		<div id="menu_nav" class="navbar navbar-toggleable-md navbar-light bg-faded">
+		  	<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		  	</button>
+		  	<a class="navbar-brand" href="#">Navbar</a>
 		
+		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    	<ul class="navbar-nav mr-auto">
+		      		<li class="nav-item active">
+		       			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      		</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="#">Link</a>
+			      	</li>
+		      		<li class="nav-item">
+		        		<a class="nav-link disabled" href="#">Disabled</a>
+		      		</li>
+		    	</ul>
+		    	<form class="form-inline my-2 my-lg-0">
+		      		<input class="form-control mr-sm-2" type="text" placeholder="Search">
+		      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    	</form>
+		  </div>
+		</div>
 <!-- 		<section id="menu_bar" class="container max-width"> -->
 <!-- 			<div class="pull-left"> -->
 <!-- 				<div class="col-sm-6 col-lg-3 col-md-6 col-xs-5 no-left-padding"> -->
