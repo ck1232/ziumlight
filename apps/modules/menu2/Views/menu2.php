@@ -20,7 +20,11 @@
 		  	<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    	<span class="navbar-toggler-icon"></span>
 		  	</button>
-		  	<a class="navbar-brand" href="#">Navbar</a>
+		  	<div class="col-sm-3 col-lg-2 col-md-2 col-xl-2 col-xs-3 no-left-padding">
+					<div id="logo">
+						<a href="#"><img alt="Ziumlight" class="img-fluid" title="Ziumlight" src="<?php echo base_url('img/catalog/logo.png');?>"></a>
+					</div>
+				</div>
 		
 		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    	<ul class="navbar-nav mr-auto">
