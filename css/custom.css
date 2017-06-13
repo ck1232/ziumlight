@@ -58,3 +58,12 @@ body {
 .big-icon{
 	font-size:32px;
 }
+
+.bar-icon{
+	font-size:20px;
+	color: rgb(35, 161, 209);
+	background-color: #ffffff;
+	background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+	background-repeat: repeat-x;
+	border-color: rgb(35, 161, 209);
+}

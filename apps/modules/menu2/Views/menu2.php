@@ -1,8 +1,7 @@
 <div>
 	<header class="page-header">
-		
 		<div id="top_nav" class="container max-width">
-			<div class="pull-left offset-md-5 offset-sm-5 offset-xs-5 offset-lg-0">
+			<div class="pull-left offset-md-5 offset-sm-5 offset-5 offset-lg-0">
 				<ul class="list-inline">
 					<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i><span class="">  hello@ziumlight.com</span></a></li>
 				</ul>
@@ -17,10 +16,10 @@
 			</div>
 		</div>
 		<div id="menu_nav" class="navbar navbar-toggleable-md navbar-light bg-faded">
-		  	<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    	<span class="navbar-toggler-icon"></span>
+		  	<button id="menu_btn" class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="fa fa-bars bar-icon"></span>
 		  	</button>
-		  	<div class="col-sm-3 col-lg-2 col-md-2 col-xl-2 col-xs-3 no-left-padding">
+		  	<div class="col-6 offset-4 col-sm-3 offset-sm-5 col-md-3 offset-md-5 col-lg-3 offset-lg-0 col-xl-3 offset-xl-0 no-left-padding">
 					<div id="logo">
 						<a href="#"><img alt="Ziumlight" class="img-fluid" title="Ziumlight" src="<?php echo base_url('img/catalog/logo.png');?>"></a>
 					</div>
@@ -113,4 +112,10 @@
 <!-- 			</div> -->
 <!-- 		</section> -->
 	</header>
+	
+	<script type="text/javascript">
+		$('#menu_btn').on('click', function(){
+			$('#menu_btn > span').toggleClass("fa-bars fa-times");
+		});
+	</script>
 </div>
