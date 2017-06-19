@@ -8,6 +8,7 @@
 <title><?php echo $title; ?></title>
 <base href="<?php echo base_url(); ?>" />
 <script src="js/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
