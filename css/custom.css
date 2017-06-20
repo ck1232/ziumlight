@@ -77,6 +77,15 @@ body {
 	color: rgb(35, 161, 209);
 }
 
+.owl-nav{
+	display: none;
+}
+
+.owl-dots {
+  position: relative;
+  top: -25px;
+}
+
 @media screen and (min-width:992px){
 	.nav-item{
 		text-align:center;

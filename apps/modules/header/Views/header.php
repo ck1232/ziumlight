@@ -11,8 +11,9 @@
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="js/jquery/owl-carousel/owl.carousel.min.css">
-<script src="jjs/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" type="text/javascript"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="css/stylesheet.css" rel="stylesheet">
