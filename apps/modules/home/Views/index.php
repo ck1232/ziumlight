@@ -1,2 +1,1 @@
-
-testing only
+<?php echo modules::run("hero"); ?>
