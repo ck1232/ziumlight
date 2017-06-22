@@ -8,5 +8,7 @@
 			<?php $this->load->view($main_content); ?>
 		</div>
 	</div>
+	<div class="row">
+		<?php echo modules::run("footer"); ?>
+	</div>
 </div>
-<?php echo modules::run("footer"); ?>

@@ -86,6 +86,48 @@ body {
   top: -25px;
 }
 
+.display-block{
+	display:block;
+}
+
+.display-inline-block{
+	display:inline-block;
+}
+.frontpage-container{
+	display:block;
+}
+
+.categoryTitle{
+	text-align:center;
+}
+
+.categoryItem{
+	text-align: center;
+}
+
+.categoryItemBox{
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:10px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.categoryTitleText{
+	font-weight:600;
+	font-size:28px;
+	letter-spacing: 2.8px;
+	color: rgb(35, 161, 209);
+}
+
+.categoryItemText{
+	font-weight:600;
+	font-size:20px;
+	letter-spacing: 1px;
+	color: rgb(35, 161, 209);
+}
+
 @media screen and (min-width:992px){
 	.nav-item{
 		text-align:center;
