@@ -3,15 +3,12 @@
 		<h3 class="categoryTitleText">New Product</h3>
 	</div>
 	
-	<div class="display-block">
-		<div style="margin: 0 auto;display: table;">
-		
-		
+	<div class="row">
 		<?php 
 			if(isset($categories_item)){
 				foreach($categories_item as $item){
 		?>
-			<div class="display-inline-block categoryItemBox">
+			<div class="categoryItemBox col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<a href="<?php echo $item-> href;?>">
 					<img alt="<?php echo $item-> name;?>" src="<?php echo $item-> img;?>" width="224px" height="163px">
 					<div class="display-block categoryItem">
@@ -23,6 +20,5 @@
 				}
 			}
 		?>
-	</div>
 	</div>
 </div>

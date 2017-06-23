@@ -1,4 +1,4 @@
-<div id="sildeshow" class="owl-carousel owl-theme owl-loaded owl-drag" style="opacity: 1;display:block;">
+<div id="hero" class="owl-carousel owl-theme owl-loaded owl-drag" style="opacity: 1;display:block;">
 	<?php foreach ($banners as $banner) { ?>
   <div class="item">
     <?php if ($banner->link) { ?>
@@ -11,7 +11,7 @@
 </div>
 
 <script type="text/javascript">
-$('.owl-carousel').owlCarousel({
+$('#hero').owlCarousel({
     loop:true,
     navigation : false,
     singleItem:true,
