@@ -1,5 +1,5 @@
 <?php
-class Category{
+class MenuCategory{
 	public $id;
 	public $href;
 	public $name;
@@ -15,17 +15,17 @@ class menu_category2 extends CI_Model{
 	public function testing(){
 		
 		//parent category
-		$category1 = new Category();
+		$category1 = new MenuCategory();
 		$category1->href = "home";
 		$category1->name = "Home";
 		
 		//child category
-		$subcategory1 = new Category();
+		$subcategory1 = new MenuCategory();
 		$subcategory1->name = "Test";
 		$subcategory1->href = "Test";
 		
 		//child category
-		$subcategory3 = new Category();
+		$subcategory3 = new MenuCategory();
 		$subcategory3->name = "Test 1";
 		$subcategory3->href = "Test 1";
 		
@@ -33,12 +33,12 @@ class menu_category2 extends CI_Model{
 		$category1->column = 1; // no of columns for each parent
 		
 		//parent category
-		$category2 = new Category();
+		$category2 = new MenuCategory();
 		$category2->href = "users";
 		$category2->name = "Users";
 		
 		//child category
-		$subcategory2 = new Category();
+		$subcategory2 = new MenuCategory();
 		$subcategory2->name = "testing parent 2";
 		$subcategory2->href = "Test parent 2";
 		
@@ -79,7 +79,7 @@ class menu_category2 extends CI_Model{
 	
 	private function convertCategoryDbToCategory($categoryDb){
 		if(isset($categoryDb)){
-			$category = new Category();
+			$category = new MenuCategory();
 			$category->name = $categoryDb->category_name;
 			$category->id = $categoryDb->category_id;
 			$category->href = $categoryDb->category_name;
@@ -91,7 +91,7 @@ class menu_category2 extends CI_Model{
 	
 	private function convertSubCategoryDbToSubCategory($subCategoryDb){
 		if(isset($subCategoryDb)){
-			$subCategory = new Category();
+			$subCategory = new MenuCategory();
 			$subCategory->name = $subCategoryDb->name;
 			$subCategory->id = $subCategoryDb->sub_category_id;
 			$subCategory->href = $subCategoryDb->name;
