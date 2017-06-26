@@ -3,7 +3,7 @@
 if(isset($category_listing)){
 	foreach($category_listing as $item){
 		?>
-		<div class="col-xl-4 col-lg-4 col-md-3 col-sm-6 col-12 product_list_item no-left-padding no-right-padding">
+		<div class="col-xl-4 col-lg-4 col-md-5 col-sm-6 col-12 product_list_item no-left-padding no-right-padding">
 			<a href="<?php echo $item->href;?>">
 				<div class="product_image">
 					<img alt="<?php $item->name; ?>" src="<?php echo $item->image;?>" class="img-responsive col-12 no-left-padding">
