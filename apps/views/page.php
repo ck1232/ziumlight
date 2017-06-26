@@ -4,7 +4,7 @@
 <?php echo modules::run("template/menu"); ?>
 <div class="container" style="top:100px;">
 	<div class="row">
-		<div id="content" class="col-sm-12">
+		<div id="content" class="col-12">
 			<?php $this->load->view($main_content); ?>
 		</div>
 	</div>

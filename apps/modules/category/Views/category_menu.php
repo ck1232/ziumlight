@@ -1,4 +1,4 @@
-<aside id="category_menu" class="col-md-3 hidden-sm-down no-left-padding">
+<div id="category_menu" class="col-md-3 hidden-sm-down no-left-padding">
 	<div class="list-group">
 		<?php
 			if(isset($category_menu)){
@@ -18,4 +18,4 @@
 			
 		?>
 	</div>
-</aside>
+</div>
