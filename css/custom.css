@@ -46,6 +46,10 @@ footer{
 	width:100%;
 }
 
+.category_listing_wrap{
+	padding: 0 auto;
+}
+
 .btn-info {
 	color: rgb(35, 161, 209);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -165,15 +169,23 @@ footer{
 	font-weight: 700;
 }
 
-.product_list_item{
-	display:inline-block;
+.product_list_item:hover{
+	box-shadow: 0px 0px 3px #888888;
 }
 
 .product_list_item{
+	margin-top : 15px;
 	text-align: left;
-	margin: 0 auto;
 	padding-bottom: 10px;
-	border: thin;
+}
+#main_image .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.final_price{
+	font-size: 25px;
+	font-weight: 600;
 }
 
 @media screen and (min-width:992px){

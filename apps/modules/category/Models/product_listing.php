@@ -16,7 +16,7 @@ class product_listing extends CI_Model{
 		$prd1 = new Listing_Item();
 		$prd1->name = 'prd1';
 		$prd1->image = 'img/catalog/shoe/ring_light.jpg';
-		$prd1->discount_price = '20';
+		/* $prd1->discount_price = '20'; */
 		$prd1->price = '40';
 		
 		$prd2 = new Listing_Item();
