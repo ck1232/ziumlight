@@ -17,18 +17,20 @@
 			<div class="col-12">
 				<span class="display-block productOptionName"><?php echo $options->name; ?></span>
 				<?php if (isset($options) && isset($options->options)){?>
-					<ul class="list-inline">
+					<select class="image-picker">
 						<?php foreach ($options->options as $option){ ?>
-							<li class="list-inline-item"><a href="#">
-								<div class="<?php if (true){ echo 'selectedProductOption';}?>">
-									<img width="53" height="53" alt="<?php echo $option->name; ?>" src="<?php echo $option->src; ?>">
-								</div>
-								</a>
-							</li>
+							<option value="<?php echo $option->name; ?>" data-img-src="<?php echo $option->src; ?>">
+							<?php echo $option->name; ?>
+							</option>
 						<?php }?>
-					</ul>
+					</select>
 				<?php }?>
 			</div>
 	<?php }}?>
+	</div>
+	
+	<div class="col-12">
+		<span class="display-block productOptionName">Qty</span>
+		<input type="number" max="99" min="1" step="1" value="1">
 	</div>
 </div>

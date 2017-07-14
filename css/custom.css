@@ -202,6 +202,26 @@ footer{
 	padding: 5px;
 }
 
+.image_picker_selector li{
+	display: inline-block;
+	margin: 3px;
+}
+
+.image_picker_selector li div{
+	padding: 3px;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail{
+	border-color: #adadad;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail.selected{
+	border-color: #2fc5f0;
+}
+
 @media screen and (min-width:992px){
 	.nav-item{
 		text-align:center;

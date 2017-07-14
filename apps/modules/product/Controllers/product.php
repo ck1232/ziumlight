@@ -10,6 +10,8 @@ class product extends MX_Controller{
 		$data['main_content'] = 'product';
 		$data['title'] = 'Product | Ziumlight';
 		$data['cards'] = array();
+		$data['scripts'] = array();
+		$data['scripts'][0] = 'js/custom/product.js';
 		//each card will get a row
 		/* array_push($data['cards'], "home/hero");
 		array_push($data['cards'], "home/display_item");

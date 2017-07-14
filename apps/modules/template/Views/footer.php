@@ -18,5 +18,11 @@
     <p><?php echo $powered; ?></p>
 	</div>
 </footer>
+
+<?php 
+	if(isset($scripts)){
+	foreach ($scripts as $script) { ?>
+<script src="<?php echo $script; ?>" type="text/javascript"></script>
+<?php }} ?>
 </body>
 </html>

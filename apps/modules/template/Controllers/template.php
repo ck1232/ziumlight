@@ -7,8 +7,8 @@ class template extends MX_Controller{
 	}
 	public function index(){}
 	public function header(){
-		$data['scripts'] = array();
-		$data['scripts'][0] = 'js/custom/menu.js';
+		$data['menu_scripts'] = array();
+		$data['menu_scripts'][0] = 'js/custom/menu.js';
 		$this->load->view('header', $data);
 	}
 	

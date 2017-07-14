@@ -17,6 +17,8 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="css/stylesheet.css" rel="stylesheet">
+<script type="text/javascript" src="js/image-picker/image-picker.min.js"></script>
+<link href="css/stylesheet.css" rel="js/image-picker/image-picker.css">
 <link href="css/custom.css" rel="stylesheet">
 <?php if (isset($styles)){
 	foreach ($styles as $style) { ?>
@@ -27,9 +29,10 @@
 	foreach ($links as $link) { ?>
 <link href="<?php echo $link->href; ?>" rel="<?php echo $link->rel; ?>" />
 <?php }} ?>
+
 <?php 
-	if(isset($scripts)){
-	foreach ($scripts as $script) { ?>
+	if(isset($menu_scripts)){
+	foreach ($menu_scripts as $script) { ?>
 <script src="<?php echo $script; ?>" type="text/javascript"></script>
 <?php }} ?>
 </head>
