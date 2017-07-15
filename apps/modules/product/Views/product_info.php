@@ -30,7 +30,19 @@
 	</div>
 	
 	<div class="col-12">
-		<span class="display-block productOptionName">Qty</span>
-		<input type="number" max="99" min="1" step="1" value="1">
+		<span class="display-block productOptionName">Quantity</span>
+		<div class="input-group spinner">
+	    	<input type="text" class="form-control" value="1" min="1" max="99">
+		    <div class="input-group-btn-vertical">
+		      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+		      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+		    </div>
+  		</div>
+	</div>
+	
+	<div class="col-12" style="padding-top: 10px;">
+		<button>
+			<span>Add to Cart</span>
+		</button>
 	</div>
 </div>
