@@ -258,7 +258,21 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected{
   top: 0;
   left: 4px;
 }
-
+.btn-addToCart{
+	background-color: #ffffff;
+	border-color: #2fc5f0;
+	border-radius:5px;
+	border-style: solid;
+	border-width: 2px;
+}
+.btn-addToCart:hover .addToCartText{
+	color: black;
+}
+.addToCartText{
+	font-weight: 500;
+	color: #666;
+	font-style: normal;
+}
 @media screen and (min-width:992px){
 	.nav-item{
 		text-align:center;
