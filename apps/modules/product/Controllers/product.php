@@ -4,6 +4,7 @@ class product extends MX_Controller{
 		parent::__construct();
 		$this->load->model('product_image');
 		$this->load->model('product_info');
+		$this->load->model('product_spec');
 	}
 	
 	public function index(){
@@ -30,7 +31,8 @@ class product extends MX_Controller{
 	}
 	
 	public function product_spec(){
-		$this->load->view('product_spec');
+		$data['product'] = $this->product_spec->getProductSpec();
+		$this->load->view('product_spec', $data);
 	}
 	
 }

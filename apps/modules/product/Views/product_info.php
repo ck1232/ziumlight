@@ -14,17 +14,22 @@
 	<div style="padding-top: 10px;">
 	<?php if (isset($product->optionsList)){
 			foreach($product->optionsList as $options){?>
-			<div class="col-12">
-				<span class="display-block productOptionName"><?php echo $options->name; ?></span>
-				<?php if (isset($options) && isset($options->options)){?>
-					<select class="image-picker">
-						<?php foreach ($options->options as $option){ ?>
-							<option value="<?php echo $option->name; ?>" data-img-src="<?php echo $option->src; ?>">
-							<?php echo $option->name; ?>
-							</option>
-						<?php }?>
-					</select>
-				<?php }?>
+			<div class="row">
+				<div class="col-md-5">
+					<span class="productOptionName autoLineHieght"><?php echo $options->name; ?></span>
+				</div>
+				
+				<div class="col-md-7">
+					<?php if (isset($options) && isset($options->options)){?>
+						<select class="image-picker">
+							<?php foreach ($options->options as $option){ ?>
+								<option value="<?php echo $option->name; ?>" data-img-src="<?php echo $option->src; ?>">
+								<?php echo $option->name; ?>
+								</option>
+							<?php }?>
+						</select>
+					<?php }?>
+				</div>
 			</div>
 	<?php }}?>
 	</div>

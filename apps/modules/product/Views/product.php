@@ -7,3 +7,7 @@
 <div class="row">
 	<?php echo modules::run("product/product_spec"); ?>
 </div>
+
+<div class="row">
+	<?php echo modules::run("product/similarProduct");?>
+</div>

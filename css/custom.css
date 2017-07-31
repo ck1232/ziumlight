@@ -195,6 +195,20 @@ footer{
 .productOptionName{
 	font-weight: 600;
 	font-size: 12px;
+	vertical-align: middle;
+	
+}
+
+.autoLineHieght{
+	line-height: 76px;
+	float: right;
+}
+
+@media screen and (max-width:767px){
+	.autoLineHieght{
+		line-height: 40px;
+		float: none;
+	}
 }
 
 .selectedProductOption{
@@ -272,6 +286,12 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected{
 	font-weight: 500;
 	color: #666;
 	font-style: normal;
+}
+
+.nav-tabs .nav-link{
+	font-weight: 400;
+	font-size: 14px;
+	color: rgb(35, 161, 209);
 }
 @media screen and (min-width:992px){
 	.nav-item{
