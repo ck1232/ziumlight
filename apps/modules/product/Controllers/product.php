@@ -26,13 +26,17 @@ class product extends MX_Controller{
 	}
 	
 	public function product_info(){
-		$data['product'] = $this->product_info->getProductInfo();
+		$data['productInfo'] = $this->product_info->getProductInfo();
 		$this->load->view('product_info', $data);
 	}
 	
 	public function product_spec(){
-		$data['product'] = $this->product_spec->getProductSpec();
+		$data['productSpec'] = $this->product_spec->getProductSpec();
 		$this->load->view('product_spec', $data);
 	}
 	
+	public function similar_product(){
+		$data['similarProduct'] = $this->product_spec->getProductSpec();
+		$this->load->view('similar_product', $data);
+	}
 }

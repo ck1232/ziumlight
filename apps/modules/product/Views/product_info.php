@@ -1,19 +1,19 @@
 <div class="col-md-5 col-sm-12 col-12 center">
 	<div class="col-12">
-		<h2><?php echo $product->name;?></h2>
+		<h2><?php echo $productInfo->name;?></h2>
 	</div>
 	<div class="col-12">
-		product by <?php echo $product->brand;?>
+		product by <?php echo $productInfo->brand;?>
 	</div>
 	
 	<div class="col-12" style="padding-top: 10px;">
-		<h3 class="final_price">$<?php echo $product->discountPrice;?></h3>
-		<span class="display-block">Discount <?php echo $product->discountPercent;?></span>
-		<span class="display-block">Usual Price $<?php echo $product->price;?></span>
+		<h3 class="final_price">$<?php echo $productInfo->discountPrice;?></h3>
+		<span class="display-block">Discount <?php echo $productInfo->discountPercent;?></span>
+		<span class="display-block">Usual Price $<?php echo $productInfo->price;?></span>
 	</div>
 	<div style="padding-top: 10px;">
-	<?php if (isset($product->optionsList)){
-			foreach($product->optionsList as $options){?>
+	<?php if (isset($productInfo->optionsList)){
+			foreach($productInfo->optionsList as $options){?>
 			<div class="row">
 				<div class="col-md-5">
 					<span class="productOptionName autoLineHieght"><?php echo $options->name; ?></span>
@@ -39,11 +39,13 @@
 		</div>
 		<div class="col-md-7">
 			<div class="input-group spinner qtyDiv">
-		    	<input type="text" class="form-control" value="1" min="1" max="99">
-			    <div class="input-group-btn-vertical">
+				<button class="btn" type="button"><i class="fa fa-plus"></i></button>
+		    	<input type="text" class="form-control" value="1" min="1" max="20" style="width: 40px;">
+			    <!-- <div class="input-group-btn-vertical">
 			      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
 			      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-			    </div>
+			    </div> -->
+			    <button class="btn" type="button"><i class="fa fa-minus"></i></button>
 	  		</div>
 		</div>
 	</div>

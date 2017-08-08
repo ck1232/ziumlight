@@ -9,5 +9,5 @@
 </div>
 
 <div class="row">
-	<?php echo modules::run("product/similarProduct");?>
+	<?php echo modules::run("product/similar_product");?>
 </div>

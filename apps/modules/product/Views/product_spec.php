@@ -1,4 +1,4 @@
-<div class="col-12" style="margin-top: 15px;">
+<div class="col-12" style="margin-top: 40px;">
 	<!-- Nav tabs -->
 	<ul class="nav nav-tabs" role="tablist">
 	  <li class="nav-item">
@@ -17,9 +17,9 @@
 	
 	<!-- Tab panes -->
 	<div class="tab-content">
-	  <div class="tab-pane active" id="info" role="tabpanel"><?php echo $product->product_info; ?></div>
-	  <div class="tab-pane" id="review" role="tabpanel"><?php echo $product->review; ?></div>
-	  <div class="tab-pane" id="qna" role="tabpanel"><?php echo $product->qna; ?></div>
-	  <div class="tab-pane" id="delivery" role="tabpanel"><?php echo $product->delivery_info; ?></div>
+	  <div class="tab-pane active" id="info" role="tabpanel"><?php echo $productSpec->product_info; ?></div>
+	  <div class="tab-pane" id="review" role="tabpanel"><?php echo $productSpec->review; ?></div>
+	  <div class="tab-pane" id="qna" role="tabpanel"><?php echo $productSpec->qna; ?></div>
+	  <div class="tab-pane" id="delivery" role="tabpanel"><?php echo $productSpec->delivery_info; ?></div>
 	</div>
 </div>

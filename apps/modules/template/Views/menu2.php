@@ -1,7 +1,7 @@
 <div>
 	<header class="page-header">
 		<div id="top_nav" class="container max-width">
-			<div class="pull-left offset-md-5 offset-sm-5 offset-5 offset-lg-0">
+			<div class="pull-left offset-md-5 offset-sm-5 offset-4 offset-lg-0">
 				<ul class="list-inline">
 					<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i><span class="">  hello@ziumlight.com</span></a></li>
 				</ul>
