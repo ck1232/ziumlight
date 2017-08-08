@@ -196,7 +196,6 @@ footer{
 	font-weight: 600;
 	font-size: 12px;
 	vertical-align: middle;
-	
 }
 
 .autoLineHieght{
@@ -204,10 +203,23 @@ footer{
 	float: right;
 }
 
+.alignToVerticalMiddle{
+	display: table-cell;
+    vertical-align: middle;
+    height: inherit;
+}
+
+.qtyDiv{
+	padding-top:27px;
+}
 @media screen and (max-width:767px){
 	.autoLineHieght{
 		line-height: 40px;
 		float: none;
+	}
+	
+	.qtyDiv{
+		padding-top:0px;
 	}
 }
 

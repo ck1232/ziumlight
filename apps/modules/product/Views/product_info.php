@@ -33,26 +33,25 @@
 			</div>
 	<?php }}?>
 	</div>
+	<div class="row">
+		<div class="col-md-5" style="padding-top: 10px;">
+			<span class="productOptionName autoLineHieght">Quantity</span>
+		</div>
+		<div class="col-md-7">
+			<div class="input-group spinner qtyDiv">
+		    	<input type="text" class="form-control" value="1" min="1" max="99">
+			    <div class="input-group-btn-vertical">
+			      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+			      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+			    </div>
+	  		</div>
+		</div>
+	</div>
 	<div class="row" style="height: 60px;">
-	
-	
-	<div class="col-5 col-sm-5 col-md-5 col-lg-5" style="padding-top: 10px;">
-		<div class="pull-right">
-		<span class="productOptionName">Quantity</span>
-		<div class="input-group spinner">
-	    	<input type="text" class="form-control" value="1" min="1" max="99">
-		    <div class="input-group-btn-vertical">
-		      <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-		      <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-		    </div>
-  		</div>
-  		</div>
-	</div>
-	
-	<div class="col-7 col-sm-7 col-md-7 col-lg-7" style="padding-top: 10px;height: inherit">
-		<button class="btn btn-block btn-lg btn-addToCart" data-loading-text="Loading..." style="height:inherit;">
-			<span class="addToCartText"><b>ADD TO CART</b></span>
-		</button>
-	</div>
+		<div class="offset-2 col-8" style="padding-top: 10px;height: inherit">
+			<button class="btn btn-block btn-lg btn-addToCart" data-loading-text="Loading..." style="height:inherit;">
+				<span class="addToCartText"><b>ADD TO CART</b></span>
+			</button>
+		</div>
 	</div>
 </div>
