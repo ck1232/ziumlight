@@ -5,6 +5,7 @@ class product extends MX_Controller{
 		$this->load->model('product_image');
 		$this->load->model('product_info');
 		$this->load->model('product_spec');
+		$this->load->model('similar_prod');
 	}
 	
 	public function index(){
@@ -36,7 +37,7 @@ class product extends MX_Controller{
 	}
 	
 	public function similar_product(){
-		$data['similarProduct'] = $this->product_spec->getProductSpec();
+		$data['similarProduct'] = $this->similar_prod->getSimilarProduct();
 		$this->load->view('similar_product', $data);
 	}
 }

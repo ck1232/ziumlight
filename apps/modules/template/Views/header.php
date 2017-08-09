@@ -26,7 +26,6 @@
 	foreach ($styles as $style) { ?>
 <link href="<?php echo $style->href; ?>" type="text/css" rel="<?php echo $style->rel; ?>" media="<?php echo $style->media; ?>" />
 <?php }} ?>
-<script src="js/common.js" type="text/javascript"></script>
 <?php if(isset($links)){ 
 	foreach ($links as $link) { ?>
 <link href="<?php echo $link->href; ?>" rel="<?php echo $link->rel; ?>" />
