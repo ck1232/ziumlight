@@ -338,25 +338,25 @@ footer h5 {
 	padding: 8px 14px 8px 14px;
 }
 /* breadcrumb */
-.breadcrumb {
+.breadcrumb1 {
 	margin: 0 0 20px 0;
 	padding: 8px 0;
 	border: 1px solid #ddd;
 }
-.breadcrumb i {
+.breadcrumb1 i {
 	font-size: 15px;
 }
-.breadcrumb > li {
+.breadcrumb1 > li {
 	text-shadow: 0 1px 0 #FFF;
 	padding: 0 20px;
 	position: relative;
 	white-space: nowrap;
 }
-.breadcrumb > li + li:before {
+.breadcrumb1 > li + li:before {
 	content: '';
 	padding: 0;
 }
-.breadcrumb > li:after {
+.breadcrumb1 > li:after {
 	content: '';
 	display: block;
 	position: absolute;

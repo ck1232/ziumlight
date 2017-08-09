@@ -5,7 +5,7 @@
 <?php
 	foreach($breadcrumb as $crumb){
 		?>
-		<li>
+		<li class="breadcrumb-item">
 			<a href="<?php echo $crumb->href;?>">
 				<?php if($crumb->isIcon == true){
 					?>
