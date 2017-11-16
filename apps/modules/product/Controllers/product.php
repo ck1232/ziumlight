@@ -27,7 +27,7 @@ class product extends MX_Controller{
 	}
 	
 	public function product_info(){
-		$data['productInfo'] = $this->product_info->getProductInfo();
+		$data['productInfo'] = $this->product_info->getProductInfo("IPHONE");
 		$this->load->view('product_info', $data);
 	}
 	

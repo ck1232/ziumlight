@@ -7,12 +7,14 @@ class Category_Menu_Item{
 }
 
 class category_menu extends CI_Model{
+	
 	function __construct(){
 		parent::__construct();
+		$this->load->model('Service/ProductCategoryService');
 	}
 
 	public function getCategoryMenu(){
-		$item1 = new Category_Menu_Item();
+		/* $item1 = new Category_Menu_Item();
 		$item1->text = "test1";
 		$item1->isActive = true;
 		
@@ -54,6 +56,30 @@ class category_menu extends CI_Model{
 
 		$categoryMenu = array();
 		array_push($categoryMenu, $item1, $item2, $item3, $item4, $item5, $item6);
+		return $categoryMenu; */
+		$categoryMenu = array();
+		$categoryList = $this->ProductCategoryService->getAllProductCategory();
+		$subCategoryList = $this->ProductCategoryService->getAllSubCategory();
+		
+		if(isset($categoryList) && !empty($categoryList)){
+			foreach($categoryList as $categoryTO){
+				$category = new Category_Menu_Item();
+				$category->text = $categoryTO->category_name;
+				$categoryMenu[$categoryTO->category_id] = $category;
+			}
+		}
+		
+		if(isset($subCategoryList) && !empty($subCategoryList)){
+			foreach($subCategoryList as $subCategoryTO){
+				if(array_key_exists($subCategoryTO->category_id, $categoryMenu)){
+					log_message('debug', 'SubCategoryVO:'.$subCategoryTO->name);
+					$subCategory = new Category_Menu_Item();
+					$subCategory->text = $subCategoryTO->name;
+					array_push($categoryMenu[$subCategoryTO->category_id]->children, $subCategory);
+				}
+			}
+		}
+		
 		return $categoryMenu;
 	}
 }

@@ -13,6 +13,7 @@ class ProductCategoryService extends CI_Model{
 		try{
 			$this->db->reconnect();
 			$this->db->where('delete_ind', 'N');
+			$this->db->where('display_ind', 'Y');
 			$query = $this->db->get(self::table_product_category);
 			
 			$categoryObjList = $query->result('ProductCategoryTO');
@@ -30,6 +31,7 @@ class ProductCategoryService extends CI_Model{
 	public function getAllSubCategory(){
 		try{
 			$this->db->where('delete_ind', 'N');
+			$this->db->where('display_ind', 'Y');
 			$query = $this->db->get(self::table_product_sub_category);
 			$subCategoryObjList = $query->result('ProductCategoryTO');
 			

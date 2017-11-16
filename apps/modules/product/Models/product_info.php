@@ -30,17 +30,33 @@ class Prd_SubOption{
 
 
 class product_info extends CI_Model{
+	const table_product = 'product';
 	function __construct(){
 		parent::__construct();
+		$this->load->model('to/ProductTO');
+		$this->load->model('Service/ProductService');
 	}
-	public function getProductInfo(){
+	public function getProductInfo($productCode){
+		
+		/* $this->db->reconnect();
+		$this->db->where('delete_ind', 'N');
+		if($productCode != null && !is_null($productCode)){
+			$this->db->where('product_code', $productCode);
+		}
+		$query = $this->db->get(self::table_product);
+		$productTOList = $query->result('ProductTO'); */
+		$productTOList = $this->ProductService->getProductTO($productCode);
+		if(!isset($productTOList) || empty($productTOList)){
+			return null;
+		}
+		$productTO = $productTOList[0];
 		$prd = new Prd_Info();
-		$prd->name = 'MacBook';
+		$prd->name = $productTO->product_name;
 		$prd->brand = 'Apple';
 		$prd->stock = 3;
 		$prd->discountPercent = '35%';
 		$prd->discountPrice = '45.00';
-		$prd->price = '70.00';
+		$prd->price = $productTO->unit_amt;
 		$prd->optionsList = $this->getProductOptionsList();
 		$prd->additionalInfo = array();
 		array_push($prd->additionalInfo, 'Free Delivery');
