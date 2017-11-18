@@ -19,7 +19,9 @@ class category extends MX_Controller{
 	}
 
 	public function category_menu(){
-		$data['category_menu'] = $this->category_menu->getCategoryMenu();
+		$category = $this->revertString($this->uri->segment(2));
+		$subCategory = $this->revertString($this->uri->segment(3));
+		$data['category_menu'] = $this->category_menu->getCategoryMenu($category, $subCategory);
 		$this->load->view('category_menu', $data);
 	}
 
@@ -29,7 +31,16 @@ class category extends MX_Controller{
 	}
 	
 	public function category_title(){
-		$data['category_title'] = 'Testing1';
+		$category = $this->revertString($this->uri->segment(2));
+		$subCategory = $this->revertString($this->uri->segment(3));
+		if($subCategory != null){
+			$data['category_title'] = $subCategory;
+		}else if($category != null){
+			$data['category_title'] = $category;
+		}else{
+			$data['category_title'] = "Category";
+		}
+		
 		$data['category_description'] = 'Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.';
 		$this->load->view('category_title', $data);
 	}
@@ -40,7 +51,25 @@ class category extends MX_Controller{
 	}
 	
 	public function category_listing(){
-		$data['category_listing'] = $this->product_listing->getProductListing();
+		$category = $this->revertString($this->uri->segment(2));
+		$subCategory = $this->revertString($this->uri->segment(3));
+		log_message('debug', 'category_listing - categoryName :'.$category.', subCategoryName:'.$subCategory);
+		$data['category_listing'] = $this->product_listing->getProductListing($category, $subCategory);
 		$this->load->view('category_listing', $data);
+	}
+	
+	public function displayCategoryListing($category, $subCategory=null){
+// 		$category = $this->uri->segment(2);
+// 		$subCategory = $this->uri->segment(3);
+		log_message('debug', 'Category:'.$category);
+		log_message('debug', 'SubCategory:'.$subCategory);
+		$this->index();
+	}
+	
+	public function revertString($str){
+		if($str != null){
+			return str_replace("_", " ", $str);
+		}
+		return $str;
 	}
 }

@@ -6,7 +6,7 @@ if(isset($category_listing)){
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 product_list_item">
 			<a href="<?php echo $item->href;?>">
 				<div class="product_image">
-					<img alt="<?php $item->name; ?>" src="<?php echo $item->image;?>" class="img-responsive col-12">
+					<img alt="<?php $item->name; ?>" src="<?php echo $item->image;?>" class="img-responsive col-12" />
 				</div>
 				
 				<div class="product_desc col-12">

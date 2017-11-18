@@ -20,5 +20,17 @@ class ProductService extends CI_Model{
 		$query = $this->db->get(self::table_product);
 		$productTOList = $query->result('ProductTO');
 		return $productTOList;
-	} 
+	}
+	
+	public function getProductTOBySubCategoryIdList($subCategoryIdList = null){
+		$this->db->reconnect();
+		$this->db->where('delete_ind', 'N');
+		if($subCategoryIdList != null && !empty($subCategoryIdList)){
+			$this->db->where_in('sub_category_id', $subCategoryIdList);
+		}
+		
+		$query = $this->db->get(self::table_product);
+		$productTOList = $query->result('ProductTO');
+		return $productTOList;
+	}
 }
