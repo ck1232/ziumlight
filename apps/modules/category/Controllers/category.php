@@ -6,6 +6,10 @@ class category extends MX_Controller{
 		$this->load->model('category_menu');
 		$this->load->model('category_sort');
 		$this->load->model('product_listing');
+		$sortOption = array('Featured', 'Shipping', 'Price', 'Popular');
+		$this->load->library('session');
+		$data = array('sortOption'=>$sortOption);
+		$this->session->set_userdata($data);
 	}
 
 	public function index(){
@@ -46,11 +50,20 @@ class category extends MX_Controller{
 	}
 	
 	public function category_sort(){
-		$data['sorts'] = $this->category_sort->getCategorySorts();
+		$sortOption = null;
+		if(isset($_POST['sortOption'])){
+			$sortOption = $_POST['sortOption'];
+		}
+		log_message('debug', 'category_sort - sortOption :'.$sortOption);
+		$data['sorts'] = $this->category_sort->getCategorySorts($sortOption);
 		$this->load->view('category_sort', $data);
 	}
 	
 	public function category_listing(){
+		$sortOption = null;
+		if(isset($_POST['sortOption'])){
+			$sortOption = $_POST['sortOption'];
+		}
 		$category = $this->revertString($this->uri->segment(2));
 		$subCategory = $this->revertString($this->uri->segment(3));
 		log_message('debug', 'category_listing - categoryName :'.$category.', subCategoryName:'.$subCategory);

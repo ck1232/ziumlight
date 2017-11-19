@@ -21,7 +21,7 @@
 		  	</button>
 		  	<div class="col-6 offset-4 col-sm-3 offset-sm-5 col-md-3 offset-md-5 col-lg-3 offset-lg-0 col-xl-3 offset-xl-0 no-left-padding">
 					<div id="logo">
-						<a href="#"><img alt="Ziumlight" class="img-fluid" title="Ziumlight" src="<?php echo base_url('img/catalog/logo.png');?>"></a>
+						<a href="home"><img alt="Ziumlight" class="img-fluid" title="Ziumlight" src="<?php echo base_url('img/catalog/logo.png');?>"></a>
 					</div>
 				</div>
 		
