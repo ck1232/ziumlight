@@ -30,7 +30,9 @@ class category extends MX_Controller{
 	}
 
 	public function breadcrumb(){
-		$data['breadcrumb'] = $this->breadcrumb->getBreadcrumb();
+		$category = $this->revertString($this->uri->segment(2));
+		$subCategory = $this->revertString($this->uri->segment(3));
+		$data['breadcrumb'] = $this->breadcrumb->getCategoryBreadcrumb($category, $subCategory);
 		$this->load->view('breadcrumb', $data);
 	}
 	
@@ -54,7 +56,7 @@ class category extends MX_Controller{
 		if(isset($_POST['sortOption'])){
 			$sortOption = $_POST['sortOption'];
 		}
-		log_message('debug', 'category_sort - sortOption :'.$sortOption);
+// 		log_message('debug', 'category_sort - sortOption :'.$sortOption);
 		$data['sorts'] = $this->category_sort->getCategorySorts($sortOption);
 		$this->load->view('category_sort', $data);
 	}
@@ -66,16 +68,47 @@ class category extends MX_Controller{
 		}
 		$category = $this->revertString($this->uri->segment(2));
 		$subCategory = $this->revertString($this->uri->segment(3));
-		log_message('debug', 'category_listing - categoryName :'.$category.', subCategoryName:'.$subCategory);
-		$data['category_listing'] = $this->product_listing->getProductListing($category, $subCategory);
+// 		log_message('debug', 'category_listing - categoryName :'.$category.', subCategoryName:'.$subCategory);
+// 		log_message('debug', 'category_listing - sortOption :'.$sortOption);
+		$prodList = $this->product_listing->getProductListing($category, $subCategory);
+		$prodList = $this->sortProdList($prodList, $sortOption);
+		$data['category_listing'] = $prodList;
 		$this->load->view('category_listing', $data);
+	}
+	
+	function cmpPrice($a, $b){
+		if(isset($a) && isset($b) && $a instanceof Listing_Item && $b instanceof Listing_Item){
+			return ($a->price >= $b->price)? 1: -1;
+		}else if(isset($a) && $a instanceof Listing_Item){
+			return 1;
+		}else if(isset($b) && $b instanceof Listing_Item){
+			return -1;
+		}else{
+			return 0;
+		}
+		return 0;
+		
+	}
+	
+	public function sortProdList($prodList, $sortOption){
+		if(isset($prodList) && !empty($prodList)){
+			if(isset($sortOption) && $sortOption != null && !empty(trim($sortOption))){
+				if(strcmp($sortOption, 'Price') == 0){
+					usort($prodList, array("category", "cmpPrice"));
+					/* foreach ($prodList as $prd){
+						log_message('debug', 'prd name:'.$prd->name);
+					} */
+				}
+			}
+		}
+		return $prodList;
 	}
 	
 	public function displayCategoryListing($category, $subCategory=null){
 // 		$category = $this->uri->segment(2);
 // 		$subCategory = $this->uri->segment(3);
-		log_message('debug', 'Category:'.$category);
-		log_message('debug', 'SubCategory:'.$subCategory);
+// 		log_message('debug', 'Category:'.$category);
+// 		log_message('debug', 'SubCategory:'.$subCategory);
 		$this->index();
 	}
 	

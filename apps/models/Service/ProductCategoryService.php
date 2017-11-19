@@ -17,9 +17,9 @@ class ProductCategoryService extends CI_Model{
 			$query = $this->db->get(self::table_product_category);
 			
 			$categoryObjList = $query->result('ProductCategoryTO');
-			foreach($categoryObjList as $category){
+			/* foreach($categoryObjList as $category){
 				log_message('debug', 'Category :'.$category->category_name);
-			}
+			} */
 			
 			return $categoryObjList;
 		}catch(Exception $ex){
@@ -35,9 +35,9 @@ class ProductCategoryService extends CI_Model{
 			$query = $this->db->get(self::table_product_sub_category);
 			$subCategoryObjList = $query->result('ProductCategoryTO');
 			
-			foreach($subCategoryObjList as $subCategory){
+			/* foreach($subCategoryObjList as $subCategory){
 				log_message('debug', 'SubCategory:'.$subCategory->name);
-			}
+			} */
 				
 			return $subCategoryObjList;
 		}catch(Exception $ex){
@@ -57,9 +57,9 @@ class ProductCategoryService extends CI_Model{
 				
 			$categoryObjList = $query->result('ProductCategoryTO');
 			if($categoryObjList != null && !empty($categoryObjList)){
-				foreach($categoryObjList as $category){
+				/* foreach($categoryObjList as $category){
 					log_message('debug', 'Category :'.$category->category_name);
-				}
+				} */
 				
 				return $categoryObjList[0];
 			}
@@ -79,9 +79,9 @@ class ProductCategoryService extends CI_Model{
 			$subCategoryObjList = $query->result('ProductCategoryTO');
 			
 			if($subCategoryObjList != null && !empty($subCategoryObjList)){
-				foreach($subCategoryObjList as $subCategory){
+				/* foreach($subCategoryObjList as $subCategory){
 					log_message('debug', 'SubCategory:'.$subCategory->name);
-				}
+				} */
 					
 				return $subCategoryObjList[0];
 			}
@@ -100,9 +100,9 @@ class ProductCategoryService extends CI_Model{
 			$query = $this->db->get(self::table_product_sub_category);
 			$subCategoryObjList = $query->result('ProductCategoryTO');
 				
-			foreach($subCategoryObjList as $subCategory){
+			/* foreach($subCategoryObjList as $subCategory){
 				log_message('debug', 'SubCategory:'.$subCategory->name);
-			}
+			} */
 	
 			return $subCategoryObjList;
 		}catch(Exception $ex){

@@ -16,7 +16,7 @@
 		?>
 		
 		<span class="col-5" style="display:inline-block">Category:</span>
-		<select class="col-6" id="menuOption" name="sortOption" onchange="selectSort();">
+		<select class="col-6" id="menuOption" name="menuOption" onchange="">
 		<?php 
 		foreach ($sorts as $sort){
 			?>
@@ -28,6 +28,7 @@
 		
 		<?php 
 	}
+	echo form_close();
 	?>
 	</div>
 </div>
@@ -39,7 +40,7 @@
 	echo form_open('', $sortAttributes);
 	if(isset($sorts)){
 		?>
-		<span class="col-6" style="display:inline-block">Sort by:</span>
+		<span class="col-5" style="display:inline-block">Sort by:</span>
 		<select class="col-6" id="sortOption" name="sortOption" onchange="selectSort();">
 		<?php 
 		foreach ($sorts as $sort){

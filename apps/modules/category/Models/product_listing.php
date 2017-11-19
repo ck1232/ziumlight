@@ -16,7 +16,7 @@ class product_listing extends CI_Model{
 	}
 
 	public function getProductListing($categoryName = null, $subCategoryName = null){
-		log_message('debug', 'getProductListing - categoryName :'.$categoryName.', subCategoryName:'.$subCategoryName);
+// 		log_message('debug', 'getProductListing - categoryName :'.$categoryName.', subCategoryName:'.$subCategoryName);
 		$productListing= array();
 		$subCategoryIdList = array();
 		if($subCategoryName != null){
@@ -29,7 +29,7 @@ class product_listing extends CI_Model{
 		}else if($categoryName != null){
 			$categoryObj = $this->ProductCategoryService->getProductCategoryIdByCategoryName($categoryName);
 			if($categoryObj != null && isset($categoryObj->category_id)){
-				log_message('debug', 'getProductListing - categoryId :'.$categoryObj->category_id);
+// 				log_message('debug', 'getProductListing - categoryId :'.$categoryObj->category_id);
 				$subCategoryObjList = $this->ProductCategoryService->getProductSubCategoryListByCategoryId($categoryObj->category_id);
 				if($subCategoryObjList != null && !empty($subCategoryObjList)){
 					foreach($subCategoryObjList as $subCategoryObject){
