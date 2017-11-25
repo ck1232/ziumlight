@@ -9,16 +9,18 @@ class product extends MX_Controller{
 	}
 	
 	public function index(){
-		$data['main_content'] = 'product';
-		$data['title'] = 'Product | Ziumlight';
-		$data['cards'] = array();
-		$data['scripts'] = array();
-		$data['scripts'][0] = 'js/custom/product.js';
-		//each card will get a row
-		/* array_push($data['cards'], "home/hero");
-		array_push($data['cards'], "home/display_item");
-		array_push($data['cards'], "home/itemSilder"); */
-		$this->load->view('page', $data);
+		$prdCode = $this->revertString($this->uri->segment(2));
+		if(isset($prdCode) && !empty(trim($prdCode))){
+			$data['main_content'] = 'product';
+			$data['title'] = 'Product | Ziumlight';
+			$data['cards'] = array();
+			$data['scripts'] = array();
+			$data['scripts'][0] = 'js/custom/product.js';
+			$this->load->view('page', $data);
+		}else{
+			redirect('/home', 'refresh');
+		}
+		
 	}
 	
 	public function product_image(){
@@ -27,8 +29,15 @@ class product extends MX_Controller{
 	}
 	
 	public function product_info(){
-		$data['productInfo'] = $this->product_info->getProductInfo("IPHONE");
-		$this->load->view('product_info', $data);
+		$prdCode = $this->revertString($this->uri->segment(2));
+		$productInfo = $this->product_info->getProductInfo($prdCode);
+		if($productInfo != null){
+			$data['productInfo'] = $productInfo;
+			$this->load->view('product_info', $data);
+		}
+		else{
+			redirect('/home', 'refresh');
+		}
 	}
 	
 	public function product_spec(){
@@ -39,5 +48,19 @@ class product extends MX_Controller{
 	public function similar_product(){
 		$data['similarProduct'] = $this->similar_prod->getSimilarProduct();
 		$this->load->view('similar_product', $data);
+	}
+	
+	public function display_product($prd_code){
+		if(isset($prd_code) && !empty(trim($prd_code))){
+			$this->index();
+		}else{
+			redirect('/home', 'refresh');
+		}
+	}
+	public function revertString($str){
+		if($str != null){
+			return str_replace("_", " ", $str);
+		}
+		return $str;
 	}
 }

@@ -51,7 +51,9 @@ class product_listing extends CI_Model{
 				$prd = new Listing_Item();
 				$prd->name = $productTO->product_name;
 				$prd->price = $productTO->unit_amt;
-				$prd->image = 'img/catalog/shoe/ring_light.jpg';
+// 				$prd->image = 'img/catalog/shoe/ring_light.jpg';
+				$prd->href = 'product/'.$productTO->product_code;
+				$prd->image = 'image/category/product/'.$productTO->product_code;
 				$prd->prd_code = $productTO->product_code;
 				array_push($productListing, $prd);
 			}

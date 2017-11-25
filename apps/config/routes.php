@@ -51,7 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 /* $route['common'] = 'commonController'; */
-$route['category/(:any)/(:any)'] = 'category/displayCategoryListing/$1/$2';
-$route['category/(:any)'] = 'category/displayCategoryListing/$1';
+$route['image/category/product/(:any)'] = 'Image/category_product_image/$1';
+$route['category/(:any)/(:any)'] = 'category/display_category_listing/$1/$2';
+$route['category/(:any)'] = 'category/display_category_listing/$1';
+$route['product/(:any)'] = 'product/display_product/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

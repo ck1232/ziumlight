@@ -35,16 +35,13 @@ class product_info extends CI_Model{
 		parent::__construct();
 		$this->load->model('to/ProductTO');
 		$this->load->model('Service/ProductService');
+		$this->load->model('Service/ProductOptionService');
+		$this->load->model('to/ProductSubOptionRsTO');
+		$this->load->model('to/ProductSubOptionTO');
+		$this->load->model('to/ProductOptionTO');
 	}
 	public function getProductInfo($productCode){
 		
-		/* $this->db->reconnect();
-		$this->db->where('delete_ind', 'N');
-		if($productCode != null && !is_null($productCode)){
-			$this->db->where('product_code', $productCode);
-		}
-		$query = $this->db->get(self::table_product);
-		$productTOList = $query->result('ProductTO'); */
 		$productTOList = $this->ProductService->getProductTO($productCode);
 		if(!isset($productTOList) || empty($productTOList)){
 			return null;
@@ -55,22 +52,38 @@ class product_info extends CI_Model{
 		$prd->brand = 'Apple';
 		$prd->stock = 3;
 		$prd->discountPercent = '35%';
-		$prd->discountPrice = '45.00';
+		$prd->discountPrice = $productTO->unit_amt;
 		$prd->price = $productTO->unit_amt;
-		$prd->optionsList = $this->getProductOptionsList();
+		$prd->optionsList = $this->getProductOptionsList($productTO->product_id);
 		$prd->additionalInfo = array();
 		array_push($prd->additionalInfo, 'Free Delivery');
 		return $prd;
 	}
 	
-	public function getProductOptionsList(){
+	public function getProductOptionsList($prdId){
 		$options = array();
 		$src = 'img/catalog/shoe/option.png';
-		$options1 = new Prd_Options('Colour');
+		$productOptionTOList = $this->ProductOptionService->getOption($prdId);
+		if(isset($productOptionTOList) && !empty($productOptionTOList)){
+			foreach ($productOptionTOList as $productOptionTO){
+				$option = new Prd_Options($productOptionTO->name);
+				$productSubOptionListTO = $productOptionTO->subOptionList;
+				if(!empty($productSubOptionListTO)){
+					foreach($productSubOptionListTO as $subOptionTO){
+						$subOption = new Prd_SubOption($subOptionTO->name, $src);
+// 						log_message('debug', 'add suboption:'.$subOptionTO->name.' to :'.$option->name);
+						array_push($option->options, $subOption);
+					}
+				}
+				array_push($options, $option);
+			}
+		}
+		
+		/* $options1 = new Prd_Options('Colour');
 		array_push($options1->options, new Prd_SubOption('Red', $src), new Prd_SubOption('Green', $src));
 		$options2 = new Prd_Options('Model');
 		array_push($options2->options, new Prd_SubOption('Square', $src), new Prd_SubOption('Circle', $src));
-		array_push($options, $options1, $options2);
+		array_push($options, $options1, $options2); */
 		return $options;
 	}
 	

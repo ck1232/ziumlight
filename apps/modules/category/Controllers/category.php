@@ -10,6 +10,8 @@ class category extends MX_Controller{
 		$this->load->library('session');
 		$data = array('sortOption'=>$sortOption);
 		$this->session->set_userdata($data);
+		$this->output->enable_profiler(TRUE);
+		$config['queries'] = TRUE;
 	}
 
 	public function index(){
@@ -104,7 +106,7 @@ class category extends MX_Controller{
 		return $prodList;
 	}
 	
-	public function displayCategoryListing($category, $subCategory=null){
+	public function display_category_listing($category, $subCategory=null){
 // 		$category = $this->uri->segment(2);
 // 		$subCategory = $this->uri->segment(3);
 // 		log_message('debug', 'Category:'.$category);

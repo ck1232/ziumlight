@@ -9,7 +9,7 @@ class ProductService extends CI_Model{
 	}
 	
 	public function getProductTO($productCode){
-		if(!isset($productCode) || trim($productCode) === ''){
+		if(!isset($productCode) || empty(trim($productCode))){
 			return null;
 		}
 		$this->db->reconnect();
