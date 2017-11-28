@@ -16,7 +16,8 @@
 	  });
 	  
 	  $('select').select2({
-		  selectOnClose: true
+		  selectOnClose: true/*,
+		  dropdownCssClass : 'no-search'*/
 	  });
 			  
 })();
