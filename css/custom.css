@@ -199,7 +199,7 @@ footer{
 }
 
 .autoLineHieght{
-	line-height: 76px;
+	line-height: 50px;
 	float: right;
 }
 
@@ -209,8 +209,11 @@ footer{
     height: inherit;
 }
 
-.qtyDiv{
-	padding-top:27px;
+.fullWidth{
+	width:100%;
+}
+.qtyDivPadding{
+	padding-top:10px;
 }
 @media screen and (max-width:767px){
 	.autoLineHieght{
@@ -250,7 +253,6 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected{
 
 .spinner {
   width: 100px;
-  margin: 0 auto;
 }
 .spinner input {
   text-align: right;

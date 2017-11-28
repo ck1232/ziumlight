@@ -2,10 +2,10 @@
 	<div class="col-12">
 		<h2><?php echo $productInfo->name;?></h2>
 	</div>
-	<div class="col-12">
+	<!-- <div class="col-12">
 		product by <?php echo $productInfo->brand;?>
 	</div>
-	
+	 -->
 	<div class="col-12" style="padding-top: 10px;">
 		<h3 class="final_price">$<?php echo $productInfo->discountPrice;?></h3>
 		<span class="display-block">Discount <?php echo $productInfo->discountPercent;?></span>
@@ -15,15 +15,15 @@
 	<?php if (isset($productInfo->optionsList)){
 			foreach($productInfo->optionsList as $options){?>
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-5 col-sm-6 col-6">
 					<span class="productOptionName autoLineHieght"><?php echo $options->name; ?></span>
 				</div>
 				
-				<div class="col-md-7">
+				<div class="col-md-7 col-sm-6 col-6 autoLineHieght">
 					<?php if (isset($options) && isset($options->options)){?>
-						<select class="image-picker">
+						<select class="productOptionName fullWidth">
 							<?php foreach ($options->options as $option){ ?>
-								<option value="<?php echo $option->name; ?>" data-img-src="<?php echo $option->src; ?>">
+								<option value="<?php echo $option->name; ?>">
 								<?php echo $option->name; ?>
 								</option>
 							<?php }?>
@@ -34,11 +34,11 @@
 	<?php }}?>
 	</div>
 	<div class="row">
-		<div class="col-md-5" style="padding-top: 10px;">
+		<div class="col-md-5 col-sm-6 col-6">
 			<span class="productOptionName autoLineHieght">Quantity</span>
 		</div>
-		<div class="col-md-7">
-			<div class="input-group spinner qtyDiv">
+		<div class="col-md-7 col-sm-6 col-6">
+			<div class="input-group spinner qtyDivPadding">
 				<button class="btn" type="button"><i class="fa fa-plus"></i></button>
 		    	<input type="text" class="form-control" value="1" min="1" max="20" style="width: 40px;">
 			    <!-- <div class="input-group-btn-vertical">
@@ -50,8 +50,8 @@
 		</div>
 	</div>
 	<div class="row" style="height: 60px;">
-		<div class="offset-2 col-8" style="padding-top: 10px;height: inherit">
-			<button class="btn btn-block btn-lg btn-addToCart" data-loading-text="Loading..." style="height:inherit;">
+		<div class="offset-4 col-8" style="padding-top: 10px;height: 100%">
+			<button class="btn btn-block btn-lg btn-addToCart" data-loading-text="Loading..." style="height:100%;">
 				<span class="addToCartText"><b>ADD TO CART</b></span>
 			</button>
 		</div>

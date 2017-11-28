@@ -21,6 +21,8 @@
 <link href="css/stylesheet.css" rel="stylesheet">
 <script type="text/javascript" src="js/image-picker/image-picker.min.js"></script>
 <link href="css/stylesheet.css" rel="css/image-picker/image-picker.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <link href="css/custom.css" rel="stylesheet">
 <?php if (isset($styles)){
 	foreach ($styles as $style) { ?>
