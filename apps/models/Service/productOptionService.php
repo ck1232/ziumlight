@@ -19,9 +19,8 @@ class ProductOptionService extends CI_Model{
 		}
 		
 		$productSubOptionRsList = $this->getProductSubOptionRs($prdId);
-		
+		$productSubOptionIdList = array();
 		if(!is_null($productSubOptionRsList) && !empty($productSubOptionRsList)){
-			$productSubOptionIdList = array();
 			foreach($productSubOptionRsList as $productSubOptionRs){
 				$subOption1Id = $productSubOptionRs->suboption1_id;
 				$subOption2Id = $productSubOptionRs->suboption2_id;

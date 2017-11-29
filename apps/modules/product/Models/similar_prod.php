@@ -17,7 +17,7 @@ class similar_prod extends CI_Model{
 		$prd1 = new Similar_Product();
 		$prd1->name = 'Product 1';
 		$prd1->price = '45.00';
-		$prd1->img = "img/catalog/shoe/ring_light.jpg";
+		$prd1->img = "img/catalog/light/light2.jpg";
 		$similarPrdArray = array();
 		for($i=1;$i<9;$i++){
 			
@@ -27,7 +27,7 @@ class similar_prod extends CI_Model{
 			}
 			$prd->name = 'Product'.$i;
 			$prd->price = '45.00';
-			$prd->img = "img/catalog/shoe/ring_light.jpg";
+			$prd->img = "img/catalog/light/light1.png";
 			$prd->href = '#';
 			array_push($similarPrdArray, $prd);
 		}
