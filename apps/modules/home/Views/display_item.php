@@ -5,8 +5,8 @@
 	
 	<div class="row">
 		<?php 
-			if(isset($categories_item)){
-				foreach($categories_item as $item){
+			if(isset($new_item)){
+				foreach($new_item as $item){
 		?>
 			<div class="categoryItemBox col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<a href="<?php echo $item-> href;?>">

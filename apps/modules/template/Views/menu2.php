@@ -15,7 +15,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="menu_nav" class="navbar navbar-toggleable-md navbar-light">
+		<div id="menu_nav" class="navbar navbar-toggleable-md navbar-light" style="background-color: white;">
 		  	<button id="menu_btn" class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    	<span class="fa fa-bars bar-icon"></span>
 		  	</button>

@@ -1,46 +1,59 @@
 <?php
 class Category_item{
 	public $id;
-	public $href;
+	public $href = 'category/';
 	public $name;
-	public $img;
+	public $img = './img/';
 }
 
 class category_items extends CI_Model{
 	function __construct(){
 		parent::__construct();
+		$this->load->model('Service/ProductCategoryService');
+		$this->load->model('to/ProductCategoryTO');
+		$this->load->model('to/ImageTO');
+		$this->load->model('Service/ImageService');
 	}
 	public function getCategoriesItem(){
+		$categoryMenu = array();
+		$categoryList = $this->ProductCategoryService->getAllProductCategory();
+		$subCategoryList = $this->ProductCategoryService->getAllSubCategory();
 		
-		//parent category
-		$category1 = new Category_item();
-		$category1->href = "home";
-		$category1->name = "Home";
-		$category1->img = "img/catalog/shoe/ring_light.jpg";
+		if(isset($categoryList) && !empty($categoryList)){
+			foreach($categoryList as $categoryTO){
+				$category = new Category_item();
+				$category->name = $categoryTO->category_name;
+				$category->href = $category->href.str_replace(" ", "_", $categoryTO->category_name);
+				$imageList = $this->ImageService->getImage('product_category',$categoryTO->category_id);
+				if(isset($imageList) && !empty($imageList)){
+					$imageTO = $imageList[0];
+					$category->img = $category->img.$imageTO->file_path;
+				}else{
+					$category->img = $category->img."catalog/shoe/ring_light.jpg";
+				}
+				$categoryMenu[$categoryTO->category_id] = $category;
+			}
+		}
 		
-		//parent category
-		$category2 = new Category_item();
-		$category2->href = "users";
-		$category2->name = "Users";
-		$category2->img = "img/catalog/shoe/ring_light.jpg";
-		//parent category
-		$category3 = new Category_item();
-		$category3->href = "users";
-		$category3->name = "Users";
-		$category3->img = "img/catalog/shoe/ring_light.jpg";
-		//parent category
-		$category4 = new Category_item();
-		$category4->href = "users";
-		$category4->name = "Users";
-		$category4->img = "img/catalog/shoe/ring_light.jpg";
-		//parent category
-		$category5 = new Category_item();
-		$category5->href = "users";
-		$category5->name = "Users";
-		$category5->img = "img/catalog/shoe/ring_light.jpg";
-		$categoryArray = array();
-		array_push($categoryArray, $category1, $category2, $category3, $category4, $category5);
-		return $categoryArray; // return array
+		/* if(isset($subCategoryList) && !empty($subCategoryList)){
+			foreach($subCategoryList as $subCategoryTO){
+				if(array_key_exists($subCategoryTO->category_id, $categoryMenu)){
+					log_message('debug', 'SubCategoryVO:'.$subCategoryTO->name);
+					$subCategory = new Category_Menu_Item();
+					$subCategory->text = $subCategoryTO->name;
+					$subCategory->href = $categoryMenu[$subCategoryTO->category_id]->href."/".str_replace(" ", "_",$subCategoryTO->name);
+					if($selectedSubCategory != null && $selectedCategory != null){
+						if($selectedCategory != null && strcasecmp($categoryMenu[$subCategoryTO->category_id]->text, $selectedCategory) == 0 &&
+						$selectedSubCategory != null && strcasecmp($subCategory->text, $selectedSubCategory) == 0){
+							$subCategory->isActive = true;
+						}
+					}
+					array_push($categoryMenu[$subCategoryTO->category_id]->children, $subCategory);
+				}
+			}
+		} */
+		
+		return $categoryMenu;
 	}
 }
 
