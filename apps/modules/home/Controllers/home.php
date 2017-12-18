@@ -4,8 +4,8 @@ class home extends MX_Controller{
 		parent::__construct();
 		$this->load->model('category_items');
 		$this->load->model('banner');
-		$this->output->enable_profiler(TRUE);
-		$config['queries'] = TRUE;
+		/* $this->output->enable_profiler(TRUE);
+		$config['queries'] = TRUE; */
 	}
 	
 	public function index(){

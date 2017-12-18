@@ -25,5 +25,9 @@ class template extends MX_Controller{
 		$this->load->view('footer', $data);
 	}
 	
+	public function backToTop(){
+		$this->load->view('backToTop');
+	}
+	
 	
 }

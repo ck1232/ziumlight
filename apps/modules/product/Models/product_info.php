@@ -78,12 +78,6 @@ class product_info extends CI_Model{
 				array_push($options, $option);
 			}
 		}
-		
-		/* $options1 = new Prd_Options('Colour');
-		array_push($options1->options, new Prd_SubOption('Red', $src), new Prd_SubOption('Green', $src));
-		$options2 = new Prd_Options('Model');
-		array_push($options2->options, new Prd_SubOption('Square', $src), new Prd_SubOption('Circle', $src));
-		array_push($options, $options1, $options2); */
 		return $options;
 	}
 	

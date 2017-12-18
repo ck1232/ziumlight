@@ -3,7 +3,7 @@ class Category_item{
 	public $id;
 	public $href = 'category/';
 	public $name;
-	public $img = './img/';
+	public $img = './image/category/';
 }
 
 class category_items extends CI_Model{
@@ -24,35 +24,10 @@ class category_items extends CI_Model{
 				$category = new Category_item();
 				$category->name = $categoryTO->category_name;
 				$category->href = $category->href.str_replace(" ", "_", $categoryTO->category_name);
-				$imageList = $this->ImageService->getImage('product_category',$categoryTO->category_id);
-				if(isset($imageList) && !empty($imageList)){
-					$imageTO = $imageList[0];
-					$category->img = $category->img.$imageTO->file_path;
-				}else{
-					$category->img = $category->img."catalog/shoe/ring_light.jpg";
-				}
+				$category->img = $category->img.str_replace(" ", "_", $categoryTO->category_name);
 				$categoryMenu[$categoryTO->category_id] = $category;
 			}
 		}
-		
-		/* if(isset($subCategoryList) && !empty($subCategoryList)){
-			foreach($subCategoryList as $subCategoryTO){
-				if(array_key_exists($subCategoryTO->category_id, $categoryMenu)){
-					log_message('debug', 'SubCategoryVO:'.$subCategoryTO->name);
-					$subCategory = new Category_Menu_Item();
-					$subCategory->text = $subCategoryTO->name;
-					$subCategory->href = $categoryMenu[$subCategoryTO->category_id]->href."/".str_replace(" ", "_",$subCategoryTO->name);
-					if($selectedSubCategory != null && $selectedCategory != null){
-						if($selectedCategory != null && strcasecmp($categoryMenu[$subCategoryTO->category_id]->text, $selectedCategory) == 0 &&
-						$selectedSubCategory != null && strcasecmp($subCategory->text, $selectedSubCategory) == 0){
-							$subCategory->isActive = true;
-						}
-					}
-					array_push($categoryMenu[$subCategoryTO->category_id]->children, $subCategory);
-				}
-			}
-		} */
-		
 		return $categoryMenu;
 	}
 }

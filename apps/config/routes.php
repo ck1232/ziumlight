@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 /* $route['common'] = 'commonController'; */
 $route['image/category/product/(:any)'] = 'Image/category_product_image/$1';
+$route['image/category/(:any)'] = 'Image/category_image/$1';
 $route['category/(:any)/(:any)'] = 'category/display_category_listing/$1/$2';
 $route['category/(:any)'] = 'category/display_category_listing/$1';
 $route['product/(:any)'] = 'product/display_product/$1';

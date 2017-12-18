@@ -10,8 +10,8 @@ class category extends MX_Controller{
 		$this->load->library('session');
 		$data = array('sortOption'=>$sortOption);
 		$this->session->set_userdata($data);
-		$this->output->enable_profiler(TRUE);
-		$config['queries'] = TRUE;
+		/* $this->output->enable_profiler(TRUE);
+		$config['queries'] = TRUE; */
 	}
 
 	public function index(){
