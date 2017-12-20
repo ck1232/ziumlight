@@ -21,6 +21,7 @@ class category extends MX_Controller{
 		array_push($data['cards'], 'category/category_title');
 		array_push($data['cards'], 'category/category_sort');
 		array_push($data['cards'], 'category/category_listing');
+		$data['scripts'][0] = 'js/custom/category.js';
 		$this->load->view('page', $data);
 	}
 

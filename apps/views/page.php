@@ -10,7 +10,6 @@
 		</div>
 	</div>
 </div>
-
 <?php echo modules::run("template/footer"); ?>
 <?php echo modules::run("template/backToTop"); ?>
 

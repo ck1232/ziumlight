@@ -50,7 +50,7 @@
 		</div>
 	</div>
 	<div class="row" style="height: 60px;">
-		<div class="offset-4 col-8" style="padding-top: 10px;height: 100%">
+		<div class="offset-lg-3 col-lg-9 offset-md-2 col-md-10 offset-sm-1 col-sm-11 col-12" style="padding-top: 10px;height: 100%">
 			<button class="btn btn-block btn-lg btn-addToCart" data-loading-text="Loading..." style="height:100%;">
 				<span class="addToCartText"><b>ADD TO CART</b></span>
 			</button>

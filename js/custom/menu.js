@@ -15,7 +15,7 @@ var amountScrolled = 180;
 $(window).scroll(function() {
     if ( $(window).scrollTop() > amountScrolled ) {
         $('#sf-back-to-top').fadeIn('slow');
-        $('.page-header').css('top','-30px');
+        $('.page-header').css('top','-20px');
     } else {
         $('#sf-back-to-top').fadeOut('slow');
         $('.page-header').css('top','0px');
